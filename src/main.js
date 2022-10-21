@@ -1,4 +1,10 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp, onUnmounted } from "vue";
+import App from "./App.vue";
 
-createApp(App).mount('#app')
+// NAVIGATION
+import router from "./router";
+
+// BOOTSTRAP
+import 'bootstrap';
+
+createApp(App).use(router).mount('#app')

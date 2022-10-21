@@ -1,26 +1,171 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<template class="bg-black">
+  
+  <Nav class="mb-5" @apiSearch="callback"/>
+  
+  <router-view @scroll.prevent @wheel.prevent @apiSearch="apiMain"/>
+  
 </template>
 
+
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Nav from './components/Nav.vue'
 
 export default {
   name: 'App',
+  data(){
+    return{
+      bgColor:{
+        backgroundColor:"rgb(22,22,22)"
+      }
+    }
+  },
   components: {
-    HelloWorld
+    Nav
+  },
+  methods: {
+		apiMain(){ 
+			console.log("apiMain: APP.vue")
+			apikey = document.querySelector('token').value;
+			console.log(apikey);
+		}
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
+  @import'~bootstrap/dist/css/bootstrap.css';
+  body,html{
+    min-height: 100vh;    
+    background-color: rgb(22,22,22);
+	font-family:'Work Sans', sans-serif;
+  }
+
+  #app {
+    background-color: rgb(22,22,22);
+	  width: 100%;
+  }
+
+  #outerdivFullPage{
+		height: 90vh;
+		position: relative;
+		overflow: hidden;
+		vertical-align: top;
+	}
+	/* scrollbar */
+		/* width */
+		::-webkit-scrollbar {
+		  width: 8px;
+		}
+
+		/* Track */
+		::-webkit-scrollbar-track {
+		  background: rgb(22,22,22)
+		}
+
+		/* Handle */
+		::-webkit-scrollbar-thumb {
+		  background: #0d6efd;
+		  border-radius: 17.5px;		  
+		}
+
+		/* Handle on hover */
+		::-webkit-scrollbar-thumb:hover {
+		  background: #555;
+		}
+
+  /* BOLSTRAP */
+  	.bg-grey-trans{
+		background-color: rgba(100,100,100,0.5);
+	}
+
+	.opacity-25{
+		opacity: 0.25;
+	}
+
+	.small-ico{
+		width: 50px;
+		height: 50px;
+	}
+
+	.med-ico{
+		width: 75px;
+		height: 50px;
+	}
+
+	.grayedOut{
+		filter: grayscale(1);
+	}
+
+  	.roundedz{
+		border-radius: 17.5px;
+	}
+
+	.roundedz-top{
+		border-top-left-radius: 17.5px;
+		border-top-right-radius: 17.5px;
+	}
+
+	.roundedz-btm{
+		border-bottom-right-radius: 17.5px;
+		border-bottom-left-radius: 17.5px;
+	}
+
+	.roundedz-left{
+		border-top-left-radius: 17.5px;
+		border-bottom-left-radius: 17.5px;
+	}
+
+	.roundedz-right{
+		border-top-right-radius: 17.5px;
+		border-bottom-right-radius: 17.5px;
+	}
+
+  .rounded-top-left{
+		border-top-left-radius: 17.5px;
+	}
+
+	.rounded-top-right{
+		border-top-right-radius: 17.5px;
+	}
+
+  	.rounded-btm-left{
+			border-bottom-left-radius: 17.5px;
+  	}
+
+  	.rounded-btm-right{
+			border-bottom-right-radius: 17.5px;
+  	}
+
+  	.bg-darkz{
+		background-image: linear-gradient(225deg, #2E303E 0%, #1D1E22 100%);
+	}
+
+  	.bg-black{
+		background-color: rgb(22,22,22);
+	}
+
+	.w-30px{
+		width: 30px;
+	}
+
+	.w-90{
+		width: 90%;
+	}
+
+	.col-15{
+    	flex: 0 0 auto;
+    	width: 12.5%;
+	}
+
+	.icon{
+		width: 40px;
+		height: 40px;
+		max-width: 40px;
+		max-height: 40px;
+	}
+
+	.grow:hover{
+		transform: scale(1.15);
+	}
 </style>
