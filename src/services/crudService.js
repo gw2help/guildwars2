@@ -3,7 +3,7 @@ import firebase from "../firebase";
 let db = firebase.ref("/array");
 
 class CrudService {
-  getAll() {
+  async getAll() {
     var childData;
     db = firebase.ref("/array")
     db.on('value',function(snapshot){
@@ -11,7 +11,13 @@ class CrudService {
             childData = childSnapshot.val();
         })
     })
+    console.log("CRUDSERVICE");
+    console.log(childData);
     return childData;
+  }
+  getAllText(){
+      db = firebase.ref("/array/accounts");
+      return db;
   }
   create(object) {
       console.log(object);
@@ -57,6 +63,8 @@ class CrudService {
       return db.remove();
     }
   */
+
+    
 }
 
 export default new CrudService();

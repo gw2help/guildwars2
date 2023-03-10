@@ -15,7 +15,7 @@
               <button class="border border-primary bg-dark roundedz text-white text-bold py-2 px-3 mb-1 hoverLink"> Get Prices </button>
             </a><br>
             <a href="http://gw2profits.com/json/v3?output_ids=73452" >
-              <button class="border border-primary bg-dark roundedz text-white text-bold py-2 px-3 mb-1 hoverLink"> Get Ingreds </button>
+              <button class="border border-primary bg-dark roundedz text-white text-bold py-2 px-3 mb-1 hoverLink"> Get Ingred </button>
             </a>
           </div>  
       </div>
@@ -111,9 +111,9 @@
         jsonResult:'',
         jsonArray: [],
 
-        api_mf_recipes: "http://gw2profits.com/json/v3?output_ids=",
-        api_prices: "http://api.guildwars2.com/v2/commerce/prices?ids=", // buy-sell price
-        api_items: "http://api.guildwars2.com/v2/items?ids=",
+        api_mf_recipes: "https://gw2profits.com/json/v3?output_ids=",
+        api_prices: "https://api.guildwars2.com/v2/commerce/prices?ids=", // buy-sell price
+        api_items: "https://api.guildwars2.com/v2/items?ids=",
 
         items: [],
         itemPrice: [],         // tussenstap naar itemprice array

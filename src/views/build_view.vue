@@ -1,7 +1,21 @@
 <template>
-    <div @click="getAll();hider();" class="col-3 bg-primary text-center text-light mx-auto mb-3" :class="hide"> get all </div>
-    <div v-if="check == true" id="outerdivFullPage" class="roundedz d-block my-0 w-100 float-center mx-auto">   
-        <div class="row mx-1 mb-5">
+    <div id="outerdivFullPage" class="roundedz d-block my-0 w-100 float-center mx-auto">   
+        
+       <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <div class="row my-3 ps-2"> 
+                    <div v-if="!jsonz" @click="getAll();"      
+                        class="col-xl-3 col-4 mx-auto mt-5 mb-5 text-center text-light border border-primary border-thick roundedz pt-4 pb-3 bg-darkz grow hoverBtn">
+                        <h4 class="bottom mx-auto">Load Builds</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        
+
+        <div v-if="jsonz" class="row mx-1 mb-5">
             <div class="col-4 mb-3">
                 <img class="icon-xl mx-auto d-block" src="../img/main/professions/guardian.png">
                 <builder v-for="x in this.jsonz.guardian[0]"
@@ -122,7 +136,7 @@
         </div>
         <div class="row">
             <div class="col-3"></div>
-            <div class="col-6 roundedz-top mx-auto bg-primary" @click="addBuild">
+            <div class="col-6 roundedz-top mx-auto bg-primary">
                 <h3 class="py-2 pt-3 text-center text-light"><b>Add Build</b></h3>
             </div>
             <div class="col-3"></div>
@@ -435,24 +449,24 @@
                 <div class="row mb-2 text-center">      <!-- NAME -->
                     <div class="col-xl-3 col-12 text-light d-flex mx-auto"><h5 class="bottom mx-auto">Name</h5></div>
                     <div class="col-xl-9 col-12 text-light d-flex mx-auto">
-                        <input class="w-100 roundedz text-xl-left text-light bg-dark ps-xl-3" type="text" name="name" v-model="name">
+                        <input class="w-100 roundedz text-xl-left text-light bg-dark ps-xl-3 border border-primary" type="text" name="name" v-model="name">
                     </div>
                 </div>
                 <div class="row mb-2">                  <!-- LINK -->
                     <div class="col-xl-3 col-12 text-light d-flex mx-auto"><h5 class="bottom mx-auto">Link</h5></div>
                     <div class="col-xl-9 col-12 text-light d-flex mx-auto">
-                        <input class="w-100 roundedz text-xl-left text-light bg-dark ps-xl-3" type="text" name="link" v-model="link">
+                        <input class="w-100 roundedz text-xl-left text-light bg-dark ps-xl-3 border border-primary" type="text" name="link" v-model="link">
                     </div>
                 </div>
                 <div class="row mb-2">                  <!-- CHATCODE -->
                     <div class="col-xl-3 col-12 text-light d-flex mx-auto"><h5 class="bottom mx-auto">chatCode</h5></div>
                     <div class="col-xl-9 col-12 text-light d-flex mx-auto">
-                        <input class="w-100 roundedz text-xl-left text-light bg-dark ps-xl-3" type="text" name="chatcode" v-model="chatCode">
+                        <input class="w-100 roundedz text-xl-left text-light bg-dark ps-xl-3 border border-primary" type="text" name="chatcode" v-model="chatCode">
                     </div>
                 </div>
                 <div class="row my-3 ps-2">             <!-- BUTTON -->
                     <div    @click="addBuild"
-                            class="col-xl-3 col-4 mx-auto text-center text-light border border-primary roundedz pt-2 pb-1 grow hoverBtn">
+                            class="col-xl-3 col-4 mx-auto text-center text-light border border-primary roundedz pt-2 pb-1 bg-darkz grow hoverBtn">
                         <h5 class="bottom mx-auto">Add</h5>
                     </div>
                     <!--<div class="col-xl-9 col-12"></div>-->
@@ -465,22 +479,14 @@
 
 <script>
 import builder from '../components/build_component.vue'
-import jsonData from '../assets/gw2_builds.json'
-import crudService from "../services/crudService";
+import crudService from "../services/crudService"
 
-
-import { add } from '@/firebase'
-import { reactive } from 'vue'
 
 export default {
     name: 'build_view',
     data(){
         return{
-            json: jsonData,
-            jsonz: "",
-
-            check: false,
-            hide: "d-block",
+            jsonz: false,
 
             clazz: "",
             profession: "",
@@ -490,8 +496,9 @@ export default {
             type: "",
             support: "",
 
-            hover: false
+            hidden: "d-block",
 
+            hover: false
         }
     },
     methods: {
@@ -509,27 +516,12 @@ export default {
             crudService.create(object)
             .then(()=> { check = true; })
             .catch(e => { console.log(e); })
-            /*
-            console.log("class: " + this.clazz);
-            console.log("profession: " + this.profession);
-            console.log("name: " + this.name);
-            console.log("link: " + this.link);
-            console.log("chatCode: " + this.chatCode);
-            console.log("type: " + this.type);
-            console.log("support: " + this.support);
-            console.log(this.json);
-            console.log(this.guardian[0]);
             
-            
-
-            console.log(index)
-            */
            this.getAll();
            this.resetForm();
         },
-        getAll(){
-            this.jsonz = crudService.getAll();
-            console.log(this.jsonz);
+        async getAll(){
+            this.jsonz = await crudService.getAll();
         },
         onDataChange(items){
             let _objects = [];
@@ -546,11 +538,9 @@ export default {
                     "profession": data.profession
                 })
 
-                this.json = _objects;
+                this.jsonz = _objects;
+                console.log(this.jsonz);
             })
-        },
-        hider(){
-            this.hide = "d-none";
         },
         resetForm(){
             this.clazz = "";
@@ -563,21 +553,23 @@ export default {
 
             //var checkBoxes = document.querySelectorAll("[name='class'],[name='profession'],[name='type'],[name='support'],[name='name'],[name='link'],[name='chatcode']")
             //console.log(checkBoxes);
+        },
+        hider(){
+            hidden = "d-none"
         }
     },
     components: {
         builder
     },
-    mounted(){
-        this.check = true;
-        //crudService.getAll().on("value", this.onDataChange);
-        //console.log(this.json);
+    created(){
+    },
+    async mounted(){ //async
+        console.log("MOUNTED");
+        await this.getAll();
+        console.log(this.jsonz);
     },
     beforeDestroy(){
         //crudService.getAll().off("value",this.onDataChange);
-    },
-    created(){
-        this.getAll();
     }
     
 }
@@ -591,7 +583,11 @@ export default {
 
 #innerdivArmor{
 	position: absolute;
-	height: 90vh;
+	height: inherit;
+}
+
+#outerdivFullPage{
+    height:auto;
 }
 
 [type=radio] { 
@@ -613,6 +609,8 @@ export default {
   border-radius: 17.5px; 
 }
 .hoverBtn:hover{
-    background-color: #0d6efd;
+    border-width: 3px !important;
 }
+
+
 </style>

@@ -1,3 +1,5 @@
 module.exports = {
-  publicPath: '/gw2_vue'
+  publicPath: process.env.NODE_ENV === 'production'
+  ?'/gw2_vue/'
+  :'/'
 }

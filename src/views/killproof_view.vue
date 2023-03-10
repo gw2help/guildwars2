@@ -21,7 +21,7 @@
 										<h5 class="text-center pt-3 pb-3 roundedz-top kpWing kpW1">WING 1</h5>
 										<div class="row py-2 px-4">
 										<div class="col-lg-3 col-md-6 px-1 kpw1b1" @click="w1b1Click"><img src="https://wiki.guildwars2.com/images/f/f5/Vale_Guardian_Pieces.png" class="w-100"></div>
-										<div class="col-lg-3 col-md-6 px-1 kpw1b2 bg-grey-trans"></div>
+										<div class="col-lg-3 col-md-6 px-1 kpw1b2"><div class="bg-grey-trans" style="width:100%;height:100%;"></div></div>
 										<div class="col-lg-3 col-md-6 px-1 kpw1b3" @click="w1b3Click"><img src="https://wiki.guildwars2.com/images/e/ed/Gorseval_Tentacle.png" class="w-100"></div>
 										<div class="col-lg-3 col-md-6 px-1 kpw1b4" @click="w1b4Click"><img src="https://wiki.guildwars2.com/images/c/c0/Sabetha_Flamethrower_Fragment.png" class="w-100"></div>
 										</div>
@@ -33,7 +33,7 @@
 										<h5 class="text-center pt-3 pb-3 roundedz-top kpWing kpW2">WING 2</h5>
 										<div class="row py-2 px-4">
 										<div class="col-lg-3 col-md-6 px-1 kpw2b1" @click="w2b1Click"><img src="https://render.guildwars2.com/file/07D2F8C534312AB0D343AF21A32D08110AF9A7CA/1377340.png" class="w-100"></div>
-										<div class="col-lg-3 col-md-6 px-1 kpw2b2 bg-grey-trans"></div>
+										<div class="col-lg-3 col-md-6 px-1 kpw2b2"><div class="bg-grey-trans" style="width:100%;height:100%;"></div></div>
 										<div class="col-lg-3 col-md-6 px-1 kpw2b3" @click="w2b3Click"><img src="https://wiki.guildwars2.com/images/4/40/White_Mantle_Abomination_Crystal_%28trophy%29.png" class="w-100"></div>
 										<div class="col-lg-3 col-md-6 px-1" @click="w2b4Click"></div>
 										</div>
@@ -46,7 +46,7 @@
 										<div class="row py-2 px-4">
 										<div class="col-lg-3 col-md-6 px-1 kpw3b1" @click="w3b1Click"><img src="https://wiki.guildwars2.com/images/c/c3/Turret_Fragment.png" class="w-100"></div>
 										<div class="col-lg-3 col-md-6 px-1 kpw3b2" @click="w3b2Click"><img src="https://wiki.guildwars2.com/images/c/cb/Keep_Construct_Rubble_%28trophy%29.png" class="w-100"></div>
-										<div class="col-lg-3 col-md-6 px-1 kpw3b3 bg-grey-trans"></div>
+										<div class="col-lg-3 col-md-6 px-1 kpw3b3"><div class="bg-grey-trans" style="width:100%;height:100%;"></div></div>
 										<div class="col-lg-3 col-md-6 px-1 kpw3b4" @click="w3b4Click"><img src="https://wiki.guildwars2.com/images/7/7a/Xera%27s_Ribbon_Scrap.png" class="w-100"></div>
 										</div>
 									</div>
@@ -94,7 +94,7 @@
 									<div class="roundedz bg-darkz text-white px-0">
 										<h5 class="text-center pt-3 pb-3 roundedz-top kpWing kpW7">WING 7</h5>
 										<div class="row py-2 px-4">
-										<div class="col-lg-3 col-md-6 px-1 kpw7b1 bg-grey-trans"></div>
+										<div class="col-lg-3 col-md-6 px-1 kpw7b1"><div class="bg-grey-trans" style="width:100%;height:100%;"></div></div>
 										<div class="col-lg-3 col-md-6 px-1 kpw7b2" @click="w7b2Click"><img src="https://wiki.guildwars2.com/images/1/12/Cardinal_Sabir%27s_Token.png" class="w-100"></div>
 										<div class="col-lg-3 col-md-6 px-1 kpw7b3" @click="w7b3Click"><img src="https://wiki.guildwars2.com/images/2/28/Cardinal_Adina%27s_Token.png" class="w-100"></div>
 										<div class="col-lg-3 col-md-6 px-1 kpw7b4" @click="w7b4Click"><img src="https://wiki.guildwars2.com/images/0/0e/Ether_Djinn%27s_Token.png" class="w-100"></div>
@@ -136,6 +136,7 @@
 </template>
 
 <script>
+
 export default {
     name: 'killproof_view',
     data(){
@@ -148,11 +149,12 @@ export default {
 			seperator: 0,
 			ids: 0,
 			lengths: 0,
-
-
         }
 	},
 	methods:{
+		showData(){
+			console.log(this.wings);
+		},
 		w1b1Click(){
 			navigator.clipboard.writeText("[&AgHRLwEA]");
 		},
@@ -291,31 +293,31 @@ export default {
 		height: 70vh;
 	}
 
-	.wing1 h5 , .kpW1{
+	.kpW1{
 		background: url(../img/raid/w1.png);
 	}
 
-	.wing2 h5 , .kpW2{
+	.kpW2{
 		background: url(../img/raid/w2.png);
 	}
 
-	.wing3 h5 , .kpW3{
+	.kpW3{
 		background: url(../img/raid/w3.png);
 	}
 
-	.wing4 h5 , .kpW4{
+	.kpW4{
 		background: url(../img/raid/w4.png);
 	}
 
-	.wing5 h5 , .kpW5{
+	.kpW5{
 		background: url(../img/raid/w5.png);
 	}
 
-	.wing6 h5 , .kpW6{
+	.kpW6{
 		background: url(../img/raid/w6.png);
 	}
 
-	.wing7 h5 , .kpW7{
+	.kpW7{
 		background: url(../img/raid/w7.png);
 	}
 
@@ -325,7 +327,6 @@ export default {
 
 	.wing{
 		min-width: 99px;
-
 	}
 
 	.kpWing{

@@ -290,13 +290,6 @@
 		</div>
 		<div class="col-6 text-center p-2">
 			<h5 class="pb-2 border-bottom border-primary text-center">Important Mechs</h5>
-			<div class="row px-2 mx-2 text-start">
-				<h5 class="pb-2 border-bottom border-primary text-center">Roles</h5>
-				<ul class="row pb-2 mx-auto border-bottom border-primary">
-					<li class="col-6">reflect</li>
-					<li class="col-6">shard-cc</li>
-				</ul>		
-			</div>
 			<div class="row px-2">
 				<ul>
 					<li class="row text-center pt-2">
@@ -336,16 +329,7 @@
 		</div>
 		<div class="col-6 text-center p-2">
 			<h5 class="pb-2 border-bottom border-primary text-center">Important Mechs</h5>
-			<div class="row px-2 mx-2 ">
-				<h5 class="pb-2 border-bottom border-primary text-center">Roles</h5>
-				<ul class="row text-center ps-4">
-					<li class="col-4">Tower</li>
-					<li class="col-4">BW</li>
-					<li class="col-4">Glenna(sak)</li>
-				</ul>
-
-				<div class="col-12 border-bottom border-primary"></div>
-			
+			<div class="row px-2 mx-2 ">			
 				<ul>
 					<li class="row text-center pt-2">
 						<a class="col-4" href="https://youtu.be/VIr8jqJMfdQ?t=64">Tower</a>
@@ -1159,7 +1143,7 @@
 						</div>
 					</li>
 				</ul>	
-				<span class="col-11 text-success border border-primary mx-auto"><b>Closest to boss tanks. </b></span>
+				<span class="col-11 text-success border border-primary mx-auto roundedz"><b>Closest to boss tanks. </b></span>
 			</div>
 			
 			<div class="row px-2" v-if="qOffClicked">
@@ -1539,7 +1523,22 @@
 			</div>
 		</div>
 	</div>
-				
+
+<!-- raid -->
+	<div class="col-12 roundedz bg-darkz text-white px-0 border border-primary mainLeft lm_raid d-none">
+		<div class="row p-2">
+			<div id="container" class="col-6">
+				<div id="outerdivRaidCotm" class="roundedz d-block my-0">      
+					<iframe id="innerdivRaidCotm" src="https://wiki.guildwars2.com/wiki/Call_of_the_Mists_(raid_effect)" scrolling="no" frameborder="0" class="border border-primary roundedz"></iframe>
+				</div>
+			</div>
+			<div id="container" class="col-6">
+				<div id="outerdivRaidEmbo" class="ms-auto roundedz d-block my-0">      
+					<iframe id="innerdivRaidEmbo" src="https://wiki.guildwars2.com/wiki/Emboldened" scrolling="no" frameborder="0" class="border border-primary roundedz"></iframe>
+				</div>
+			</div>
+		</div>
+	</div>			
 <!-- frac -->
 	<div class="col-12 roundedz bg-darkz text-white px-0 border border-primary mainLeft lm_frac d-none">
 		<div class="row p-2">
@@ -1549,13 +1548,14 @@
 				</div>
 			</div>
 			<div id="container" class="col-6">
-				<div id="outerdiv" class="roundedz d-block my-0">      
+				<div id="outerdiv" class="ms-auto roundedz d-block my-0">      
 					<iframe id="innerdiv" src="https://wiki.guildwars2.com/wiki/Template:Daily_Fractal_Schedule" scrolling="no" frameborder="0" class="border border-primary roundedz"></iframe>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
 <div class="col-11 row mx-auto my-2 raidList">
   <div class="col-15 px-1" v-for="x in raidList" :key="x">
 	    <div class="wing roundedz bg-darkz text-white px-0" :class="x.class">
@@ -1589,17 +1589,65 @@
 	    </p>
         -->
     </div>
+	<!--	
 	<div class="col-15 px-1">
 		<div class="wing fractal roundedz bg-darkz border border-primary text-white px-0">
 			<a href="#" ><h5 class="text-center pt-3 pb-3 roundedz-top" > FRACS </h5></a>
-			<div @click="fracClick" class="row my-2 mx-3 border border-primary roundedz fracDaily px-0"><img class="d-none" :src="fractals.dailies" ><p class="w-100 my-1 text-center px-0" >Dailies</p></div>
-			<div @click="fracClick" class="row my-2 mx-3 border border-primary roundedz fracRecs px-0"><img class="d-none" :src="fractals.recs" ><p class="w-100 my-1 text-center px-0" >Recs</p></div>
-			<div @click="fracClick" class="row my-2 mx-3 border border-primary roundedz fracCMs px-0"><img class="d-none" :src="fractals.cms" > <p class="w-100 my-1 text-center px-0" >CMs</p></div>
-			<div @click="fracClick" class="row pt-2" >
-				<img class="d-none" src="#" >
-			</div></div>
+			<div @click="fracClick" class="row my-2 mx-3 border border-primary roundedz fracDaily px-0"><p class="w-100 my-1 text-center px-0" >Dailies</p></div>
+			<div @click="fracClick" class="row my-2 mx-3 border border-primary roundedz fracRecs px-0"><p class="w-100 my-1 text-center px-0" >Recs</p></div>
+			<div @click="fracClick" class="row my-2 mx-3 border border-primary roundedz fracCMs px-0"><p class="w-100 my-1 text-center px-0" >CMs</p></div>
+			<div @click="fracClick" class="row pt-2" ><img class="d-none" src="#" ></div>
+			
+		</div>
+	</div>
+	-->
+	<div class="col-15 px-1">
+		<div class="wing roundedz bg-darkz border border-primary text-white px-0 w8">
+			<a href="#" target="_blank">
+	    		<h5 class="text-center pt-3 pb-3 roundedz-top">RAIDS</h5>
+	    	</a>
+			<!--<div class="row my-2 mx-3 border border-primary roundedz px-0">-->
+			<div class="row mt-2 mx-auto px-2">
+				<div class="col-3 p-0">
+					<img class="kpIcon d-block mx-auto rounded" src="../img/raid/kp/sab.png">
+					<span class="smallText relative">{{ kpSab }}</span>
+				</div>
+				<div class="col-3 p-0">
+					<img class="kpIcon d-block mx-auto rounded"  src="../img/raid/kp/matt.png">
+					<span class="smallText relative">{{ kpMatt }}</span>
+				</div>
+				<div class="col-3 p-0">
+					<img class="kpIcon d-block mx-auto rounded"  src="../img/raid/kp/xera.png">
+					<span class="smallText relative">{{ kpXera }}</span>
+				</div>
+				<div class="col-3 p-0">
+					<img class="kpIcon d-block mx-auto rounded"  src="../img/raid/kp/deimos.png">
+					<span class="smallText relative">{{ kpDeimos }}</span>
+				</div>
+				<div class="col-3 p-0">
+					<img class="kpIcon d-block mx-auto rounded" src="../img/raid/kp/dhuum.png">
+					<span class="smallText relative">{{ kpDhuum }}</span>
+				</div>
+				<div class="col-3 p-0">
+					<img class="kpIcon d-block mx-auto rounded"  src="../img/raid/kp/qadim.png">
+					<span class="smallText relative">{{ kpQ1 }}</span>
+				</div>
+				<div class="col-3 p-0">
+					<img class="kpIcon d-block mx-auto rounded"  src="../img/raid/kp/qadim2.png">
+					<span class="smallText relative">{{ kpQ2 }}</span>
+				</div>
+				<div class="col-3 p-0">
+					<img class="kpIcon d-block mx-auto rounded"  src="../img/raid/kp/li.png">
+					<span class="smallText relative">{{ kpLi }}</span>
+				</div>
+			</div>
+			<div @click="raidClick" class="row my-2 mx-3 border border-primary roundedz px-0"><p class="w-100 my-1 text-center px-0">BONUS</p></div>
+			<div class="row pt-2"><img class="d-none" src="#"></div>
+		</div>
 	</div>
 </div>
+
+<!--
 <div class="col-11 row mx-auto mb-2 dungList">
 	<div class="col-15 px-1" v-for="y in dungList" :key="y">
 		<div class="dung roundedz bg-darkz text-white px-0" :class="y.class">
@@ -1626,14 +1674,16 @@
 		<p></p>
 	</div>
 </div>
-<div class="col-11 row mx-auto">
+-->
+
+<div class="col-11 row mx-auto my-2">
 	<div class="row">
 		<input type="text" class="token tokent roundedz border-primary mx-auto text-center text-white d-block bg-black" placeholder="paste-> api_key" style="min-width: 190px" value="10A33C63-85D8-D743-ABCD-B0219626D384F1D1A5B1-BADF-484D-81D4-65FF16D6B218">
 	</div>
 	<div class="row">
 		<button 
 				class="btnGo border border-primary bg-dark roundedz text-white text-bold py-2 my-2 mx-auto" 
-				@click="apiMain"><b> SEARCH </b>
+				@click="apiMain()"><b> SEARCH </b>
 		</button>
 	</div>
 </div>
@@ -1650,6 +1700,18 @@
 		fractals: json.fractals,
 		all: json,
 		allPath: [],
+		firebaseData: "",
+		currentUser: "",
+		timeOut: 0,
+
+		kpSab: 0,
+		kpMatt: 0,
+		kpXera: 0,
+		kpDeimos: 0,
+		kpDhuum: 0,
+		kpQ1: 0,
+		kpQ2: 0,
+		kpLi: 0,
 
 		w1b1: -1,
 		w1b2: -1,
@@ -1713,44 +1775,10 @@
     },
 	props:
 	{
-        /*
-        wing: {
-            type: String,
-            required: true
-        },
-        fullGuide: {
-            type: String,
-            required: true
-        },
-        imgBg: {
-            type: String,
-            required: true
-        },
-        bossName: {
-            type: String,
-            required: true
-        },
-        bossVideo: {
-            type: String,
-            required: true
-        },
-        bossImg: {
-            type: String,
-            required: true
-        },
-        bossImgTank: {
-            type: Array,
-            required: false
-        },
-        bossImgToken: {
-            type: String,
-            required: false
-        },
-        bossCodeToken: {
-            type: String,
-            required: false
-        }
-        */
+		accounts:{
+			type: Array,
+			required: true
+		}
     },
     methods:{
 		anyClick(event){
@@ -1845,6 +1873,15 @@
 			if(menuWing.classList.contains("d-none")) 
 					menuWing.classList.remove("d-none");
 			else 	menuWing.classList += " d-none";
+				
+
+		},
+		raidClick(){
+			var raidWing = document.querySelector(".lm_raid");
+
+			if(raidWing.classList.contains("d-none"))
+					raidWing.classList.remove("d-none");
+			else	raidWing.classList += " d-none";
 		},
 		fracClick(){
 			var fracWing = document.querySelector(".lm_frac");
@@ -2063,6 +2100,261 @@
 				}
 			})
 		},
+		/*
+		getFractals: function(){
+			var all = [];
+			var recs = [];
+			var dailies = [];
+
+			this.apikey = document.querySelector('.tokent').value;
+
+			// GET DAILY FRACTALS
+			fetch(`https://api.guildwars2.com/v2/achievements/categories/88`)
+			.then(r => r.json())
+			.then(data => { 
+				all = data;
+				console.log("DATA");
+				console.log(data.achievements);
+				for(let i=0; i<data.achievements.length;i++){
+    				switch(data.achievements[i]){
+    				// recs				[index -1]			json
+    				case 2477:
+    				    recs.push(this.fracJson[2]);		// 2
+    				    break;
+    				case 2405:
+    				    recs.push(this.fracJson[4]); 	// 4
+    				    break;
+    				case 2316:
+    				    recs.push(this.fracJson[5]);		// 5
+    				    break;
+    				case 2229:
+    				    recs.push(this.fracJson[6]);		// 6
+    				    break;
+    				case 2422:
+    				    recs.push(this.fracJson[8]);		// 8
+    				    break;
+    				case 2560:
+    				    recs.push(this.fracJson[10]);
+    				    break;
+    				case 2153:
+    				    recs.push(this.fracJson[11]);
+    				    break;
+    				case 2597:
+    				    recs.push(this.fracJson[12]);
+    				    break;
+    				case 2327:
+    				    recs.push(this.fracJson[14]);
+    				    break;
+    				case 2238:
+    				    recs.push(this.fracJson[15]);
+    				    break;
+    				case 2308:
+    				    recs.push(this.fracJson[16]);
+    				    break;
+    				case 2467:
+    				    recs.push(this.fracJson[18]);
+    				    break;
+    				case 2492:
+    				    recs.push(this.fracJson[19]);
+    				    break;
+    				case 2245:
+    				    recs.push(this.fracJson[24]);
+    				    break;
+    				case 2473:
+    				    recs.push(this.fracJson[25]);
+    				    break;
+    				case 2239:
+    				    recs.push(this.fracJson[27]);
+    				    break;
+    				case 2297:
+    				    recs.push(this.fracJson[28]);
+    				    break;
+    				case 2330:
+    				    recs.push(this.fracJson[30]);
+    				    break;
+    				case 2533:
+    				    recs.push(this.fracJson[31]);
+    				    break;
+    				case 2663:
+    				    recs.push(this.fracJson[32]);
+    				    break;
+    				case 2592:
+    				    recs.push(this.fracJson[34]);
+    				    break;
+    				case 2266:
+    				    recs.push(this.fracJson[35]);
+    				    break;
+    				case 2309:
+    				    recs.push(this.fracJson[36]);
+    				    break;
+    				case 2377:
+    				    recs.push(this.fracJson[37]);
+    				    break;
+    				case 2591:
+    				    recs.push(this.fracJson[39]);
+    				    break;
+    				case 2171:
+    				    recs.push(this.fracJson[40]);
+    				    break;
+    				case 2598:
+    				    recs.push(this.fracJson[41]);
+    				    break;
+    				case 2394:
+    				    recs.push(this.fracJson[42]);
+    				    break;
+    				case 2337:
+    				    recs.push(this.fracJson[48]);
+    				    break;
+    				case 3237:
+    				    recs.push(this.fracJson[53]);
+    				    break;
+    				case 3185:
+    				    recs.push(this.fracJson[54]);
+    				    break;
+    				case 3192:
+    				    recs.push(this.fracJson[58]);
+    				    break;
+    				case 3228:
+    				    recs.push(this.fracJson[59]);
+    				    break;
+    				case 3172:
+    				    recs.push(this.fracJson[60]);
+    				    break;
+    				case 3198:
+    				    recs.push(this.fracJson[61]);
+    				    break;
+    				case 3213:
+    				    recs.push(this.fracJson[62]);
+    				    break;
+    				case 3215:
+    				    recs.push(this.fracJson[64]);
+    				    break;
+    				case 3189:
+    				    recs.push(this.fracJson[65]);
+    				    break;
+    				case 3184:
+    				    recs.push(this.fracJson[66]);
+    				    break;
+    				case 3201:
+    				    recs.push(this.fracJson[67]);
+    				    break;
+    				case 3187:
+    				    recs.push(this.fracJson[68]);
+    				    break;
+    				case 3219:
+    				    recs.push(this.fracJson[69]);
+    				    break;
+    				case 3238:
+    				    recs.push(this.fracJson[75]);
+    				    break;
+    				case 2956:
+    				    dailies.push(this.fracJson[76]);
+    				    break;
+    				case 2892:
+    				    dailies.push(this.fracJson[77]);
+    				    break;
+    				case 4494:
+    				    dailies.push(this.fracJson[78]);
+    				    break;
+    				case 2923:
+    				    dailies.push(this.fracJson[80]);
+    				    break;
+					// double categorized
+    				case 2947:
+    				    dailies.push(this.fracJson[81]);
+    				    break;
+    				case 2967:
+    				    dailies.push(this.fracJson[82]);
+    				    break;
+					case 2903:
+						dailies.push(this.fracJson[83]);
+						break;
+    				case 4224:
+    				    dailies.push(this.fracJson[84]);
+    				    break;
+    				case 2941:
+    				    dailies.push(this.fracJson[85]);
+    				    break;
+    				case 2952:
+    				    dailies.push(this.fracJson[86]);
+    				    break;
+    				case 3973:
+    				    dailies.push(this.fracJson[87]);
+    				    break;
+    				case 3038:
+    				    dailies.push(this.fracJson[88]);
+    				    break;
+					case 2892:
+						dailies.push(this.fracJson[89]);
+						break;
+					case 2966:
+						dailies.push(this.fracJson[90]);
+						break;
+					case 2939:
+						dailies.push(this.fracJson[91]);
+						break;
+					case 2989:
+						dailies.push(this.fracJson[92]);
+						break;
+					case 2952:
+						dailies.push(this.fracJson[93]);
+						break;
+					case 2930:
+						dailies.push(this.fracJson[94]);
+						break;
+					case 2932:
+						dailies.push(this.fracJson[95]);
+						break;
+					case 2948:
+						dailies.push(this.fracJson[96]);
+						break;
+					case 3038:
+						dailies.push(this.fracJson[97]);
+						break;
+					case 3177:
+						dailies.push(this.fracJson[98]);
+						break;
+					case 3458:
+						dailies.push(this.fracJson[99]);
+						break;
+					case 5446:
+						dailies.push(this.fracJson[100]);
+						break;					
+					}
+				}
+				console.log("RECS:");
+				console.log(recs);
+				console.log("DAILIES:");
+				console.log(dailies);
+			});
+		},
+		*/
+		getUser: function(){
+			this.apikey = document.querySelector('.tokent').value;
+
+			for(var x = 0; x < this.accounts.length ; x++){
+				if(this.apikey == this.accounts[x].api){
+					this.currentUser = this.accounts[x].kpme;
+					console.log("CURRENT KP");
+					console.log(this.currentUser);
+				}
+			}
+		},
+		getTokens: function(){
+			fetch(`https://killproof.me/api/kp/${this.currentUser}`)
+			.then(r => r.json())
+			.then(data => { 
+				console.log(data);
+				this.kpSab = data.tokens["Sabetha Flamethrower Fragment Piece"];
+				this.kpMatt = data.tokens["White Mantle Abomination Crystal"];
+				this.kpXera = data.tokens["Ribbon Scrap"];
+				this.kpDeimos = data.tokens["Fragment of Saul's Burden"];
+				this.kpDhuum = data.tokens["Dhuum's Token"];
+				this.kpQ1 = data.tokens["Ether Djinn's Token"];
+				this.kpQ2 = data.tokens["Qadim's Token"];
+				this.kpLi = data.killproofs["Legendary Divination"] + data.killproofs["Legendary Insight"];
+			});
+		},
 		resetPathBgColor(){
 			this.allPath = document.querySelectorAll('#w1b1 , #w1b2 , #w1b3 , #w1b4	, #w2b1 , #w2b2 , #w2b3 , #w3b1 , #w3b2 , #w3b3 , #w3b4	, #w4b1 , #w4b2 , #w4b3 , #w4b4	, #w5b1 , #w5b2 , #w5b3 , #w5b4	, #w6b1 , #w6b2 , #w6b3 , #w6b4	, #w7b1 , #w7b2 , #w7b3 , #w7b4 , #dung1story , #dung1path1 , #dung1path2 , #dung1path3 , #dung2story , #dung2path1 , #dung2path2 , #dung2path3 , #dung3story , #dung3path1 , #dung3path2 , #dung3path3 , #dung4story , #dung4path1 , #dung4path2 , #dung4path3 , #dung5story , #dung5path1 , #dung5path2 , #dung5path3 , #dung6story , #dung6path1 , #dung6path2 , #dung6path3 , #dung7story , #dung7path1 , #dung7path2 , #dung7path3 , #dung8story , #dung8path1 , #dung8path2 , #dung8path3 ');
 			console.log("RESET");
@@ -2074,7 +2366,9 @@
 		apiMain: async function(){
 			this.resetPathBgColor();
 			this.getRaids();
-			this.getDungeons();
+			//this.getDungeons();
+			this.getUser();
+			this.getTokens();
 		},
 		shBasicClick(){
 			this.shBasicClicked = true;
@@ -2209,6 +2503,10 @@
 		background: url(../img/raid/w7.png);
 	}
 
+	.w8 h5 {
+		background: url(../img/raid/extra.png);
+	}
+
 	.wing .row{
 		min-width: 66px;
 	}
@@ -2218,10 +2516,15 @@
 
 	}
 
+	.kpIcon{
+		width: 34px;
+		height: 34px;
+	}
+
     .fractal h5{
 		background-image: url(../img/fractals/fractals.png);
 	}
-
+/*
     .dung_ac, .dung1 h5{
 		background: url(../img/dung/ac.png);
 	}
@@ -2253,7 +2556,7 @@
 	.dung_arah, .dung8 h5{
 		background: url(../img/dung/arah.png);
 	}
-
+*/
 	#innerdiv {
 		position:absolute;
 		top:-155px;
@@ -2288,6 +2591,41 @@
 		vertical-align: top;
 	}
 
+	#innerdivRaidCotm {
+		position: absolute;
+		top: -600px;
+		left:-155px;
+		width: 800px;
+		height: 920px;
+	}
+
+	#outerdivRaidCotm {
+		width: 400px;
+		height: 320px;
+		overflow:hidden;
+		position:relative;
+		vertical-align: top;
+	}
+
+	#innerdivRaidEmbo {
+		position: absolute;
+		top: -520px;
+		left:-155px;
+		width: 1000px;
+		height: 900px;
+	}
+
+	#outerdivRaidEmbo {
+		width: 400px;
+		height: 320px;
+		overflow:hidden;
+		position:relative;
+		vertical-align: top;
+	}
+
+	
+
+
 	/* NAV STUFF */
 
 	.token{
@@ -2302,6 +2640,14 @@
 	}
 
 	.btnGo:hover{
+		border-width: 2px !important;
+	}
+
+	.btnGoSmall {
+		height: 24px !important;
+	}
+
+	.btnGoSmall:hover{
 		border-width: 2px !important;
 	}
 	
@@ -2387,6 +2733,13 @@
 	.active{
 		background-color: #007bff!important;
 		color: #f8f9fa !important;
+	}
+
+	.relative{
+		position: relative;
+		left: 7px;
+    	bottom: 18px;
+    	background-color: black;
 	}
 
 </style>

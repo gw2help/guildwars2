@@ -92,7 +92,88 @@ const routes = [
     path: '/salvage',
     name: 'salvage',
     component: () => import('../views/salvage_view.vue')
+  },
+  {
+    path: '/strikes',
+    name: 'strikes',
+    component: () => import('../views/strikes_view.vue')
+  },
+  {
+    path: '/extra',
+    name: 'extra',
+    component: () => import('../views/extra_view.vue')
+  },
+  {
+    path: '/breakbar',
+    name: 'breakbar',
+    component: () => import('../views/breakbar_view.vue')
+  },
+  {
+    path: '/hardstuck',
+    name: 'hardstuck',
+    component: () => import('../views/hardstuck_view.vue')
+  }, //-----------------------------------------------------------------------
+  {
+    path: '/music',
+    name: 'music',
+    beforeEnter() {window.open('http://gw2mb.com/','_blank')}
+  },
+  {
+    path: '/legendary',
+    name: 'legendary',
+    component: () => import('../views/legendary_view.vue')
+  },
+  {
+    path:'/leggyshard',
+    name: 'leggyshard',
+    component: () => import('../views/leggyshard_view.vue')
+  },
+  {
+    path:'/mounts',
+    name: 'mounts',
+    component: () => import('../views/mounts_view.vue')
+  },
+  {
+    path:'/farm',
+    name: 'farm',
+    component: () => import('../views/farm_view.vue')
+  },
+  {
+    path:'/fracz',
+    name: 'fracz',
+    component : () => import('../views/fractal_view.vue')
+  },
+  {
+    path: '/gemstore',
+    name: 'gemstore',
+    component: () => import('../views/gem_store_view.vue')
+  },
+  {
+    path: '/discretize',
+    name: 'discretize',
+    component: () => import('../views/discretize_view.vue')
+  },
+  {
+    path: '/snowcrows',
+    name: 'snowcrows',
+    component: () => import('../views/snowcrows_view.vue')
+  },
+  {
+    path: '/guildjen',
+    name: 'guildjen',
+    component: () => import('../views/guildjen_view.vue')
+  },
+  {
+    path: '/tekkit',
+    name: 'tekkit',
+    component: () => import('../views/tekkit_view.vue')
+  },
+  {
+    path: '/mukluk',
+    name: 'mukluk',
+    component: () => import('../views/mukluk_view.vue')
   }
+
 ]
 
 const router = createRouter({

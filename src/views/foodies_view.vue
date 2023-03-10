@@ -27,7 +27,7 @@ export default {
 
 #innerdivProvisioner{
 		position: absolute;
-		height: 90vh;
+		height: inherit;
         background-color: #f8f9fa!important;
 	}
 

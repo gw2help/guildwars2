@@ -446,6 +446,87 @@
 		"recs": "../img/recs.png",
 		"cms": "../img/cms.png"
 	},
+	"ibs":[
+		{
+			"name": "CW",
+			"class": "ibs1",
+			"wiki": "https://wiki.guildwars2.com/wiki/Strike_Mission:_Cold_War",
+			"video": "xx",
+			"imgBg": "../img/strikes/cw.png"
+		},
+		{
+			"name": "FOJ",
+			"class": "ibs2",
+			"wiki": "https://wiki.guildwars2.com/wiki/Weekly_Strike_Mission:_Fraenir_of_Jormag",
+			"video": "xx",
+			"imgBg": "../img/strikes/foj.png"
+		},
+		{
+			"name": "SP",
+			"class": "ibs3",
+			"wiki": "https://wiki.guildwars2.com/wiki/Strike_Mission:_Shiverpeaks_Pass",
+			"video": "xx",
+			"imgBg": "../img/strikes/sp.png"
+		},
+		{
+			"name": "VOICE",
+			"class": "ibs4",
+			"wiki": "https://wiki.guildwars2.com/wiki/Weekly_Strike_Mission:_Voice_of_the_Fallen_and_Claw_of_the_Fallen",
+			"video": "xx",
+			"imgBg": "../img/strikes/foj.png"
+		},
+		{
+			"name": "WOJ",
+			"class": "ibs5",
+			"wiki": "https://wiki.guildwars2.com/wiki/Strike_Mission:_Whisper_of_Jormag",
+			"video": "xx",
+			"imgBg": "../img/strikes/woj.png"
+		},
+		{
+			"name": "BONE",
+			"class": "ibs6",
+			"wiki": "https://wiki.guildwars2.com/wiki/Weekly_Strike_Mission:_Boneskinner",
+			"video": "xx",
+			"imgBg": "../img/strikes/foj.png"
+		}
+	],
+	"strikes":[
+		{
+			"name": "AH",
+			"class": "s1",
+			"wiki": "https://wiki.guildwars2.com/wiki/Strike_Mission:_Aetherblade_Hideout",
+			"video": "https://www.youtube.com/watch?v=zmr5y37MAuI",
+			"imgBg": "../img/strikes/ah.png"
+		},
+		{
+			"name": "XJ",
+			"class": "s2",
+			"wiki": "https://wiki.guildwars2.com/wiki/Strike_Mission:_Xunlai_Jade_Junkyard",
+			"video": "https://www.youtube.com/watch?v=gj9ZzHYNMek",
+			"imgBg": "../img/strikes/xj.png"
+		},
+		{
+			"name": "KO",
+			"class": "s3",
+			"wiki": "https://wiki.guildwars2.com/wiki/Strike_Mission:_Kaineng_Overlook",
+			"video": "https://www.youtube.com/watch?v=iHiYS5P85Co",
+			"imgBg": "../img/strikes/ko.png"
+		},
+		{
+			"name": "HT",
+			"class": "s4",
+			"wiki": "https://wiki.guildwars2.com/wiki/Strike_Mission:_Harvest_Temple",
+			"video": "https://www.youtube.com/watch?v=dGZEa52dM3M",
+			"imgBg": "../img/strikes/ht.png"
+		},
+		{
+			"name": "OLC",
+			"class": "s5",
+			"wiki": "https://wiki.guildwars2.com/wiki/Strike_Mission:_Old_Lion%27s_Court",
+			"video": "https://www.youtube.com/watch?v=Eqibznt-E_Y",
+			"imgBg":"../img/strikes/olc.png"
+		}
+	],
 	"mechs":{
 		"fixation": "../img/raid/guide/fixation.png",
 		"poison": "../img/raid/guide/volatile_poison.png",

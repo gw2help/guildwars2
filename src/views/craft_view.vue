@@ -26,7 +26,7 @@ export default {
 
 #innerdivCraft{
 		position: absolute;
-		height: 90vh;
+		height: inherit;
 	}
 
 </style>

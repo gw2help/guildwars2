@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "deploy": "node deploy.js"
+    "deploy": "sh deploy.sh"
   },
   "dependencies": {
     "bootstrap": "^5.1.3",

@@ -25,7 +25,7 @@ export default {
 <style scoped>
 #innerdivAttribute{
 		position: absolute;
-		height: 90vh; 
+		height: inherit; 
 	}
 
 </style>

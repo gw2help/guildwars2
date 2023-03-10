@@ -2,7 +2,7 @@
     <div id="outerdivFullPage" class="roundedz d-block my-0 w-100 float-center mx-auto">      
 				<iframe 
 	    			id="innerdivArmor"
-	    			src="https://discretize.eu" 
+	    			src="https://hardstuck.gg/gw2/guides/" 
 	    			scrolling="yes" 
 	    			frameborder="0" 
 	    			class="border border-primary roundedz w-100"></iframe>
@@ -25,7 +25,7 @@ export default {
 <style scoped>
 #innerdivArmor{
 		position: absolute;
-		height: 90vh;
+		height: inherit;
 	}
 
 </style>

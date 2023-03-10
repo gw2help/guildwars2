@@ -1,5 +1,5 @@
 <template>
-    <div class="col-3 px-2">
+    <div class="col-md-6 col-lg-4 col-xl-3 px-2">
         <div class="text-white border border-primary roundedz bg-darkz px-0 my-2">               
                 <div class="wrapper text-center bg-primary roundedz-top pt-2 pb-1">
                     <a class="text-white fw-bold" :href="wiki" title="Master's Salvage Kit">
@@ -111,79 +111,79 @@
     },
     props:{
         name:{
-            type: Text,
+            type: String,
             required: true
         },
         img:{
-            type: Text,
+            type: String,
             required: true
         },
         wiki:{
-            type: Text,
+            type: String,
             required: true
         },
         name1:{
-            type: Text,
+            type: String,
             required: true
         },
         img1:{
-            type: Text,
+            type: String,
             required: true
         },
         amount1:{
-            type: Text,
+            type: String,
             required: true
         },
         wiki1:{
-            type: Text,
+            type: String,
             required:true
         },
         name2:{
-            type: Text,
+            type: String,
             required: true
         },
         img2:{
-            type: Text,
+            type: String,
             required: true
         },
         amount2:{
-            type: Text,
+            type: String,
             required: true
         },
         wiki2:{
-            type: Text,
+            type: String,
             required:true
         },
         name3:{
-            type: Text,
+            type: String,
             required: true
         },
         img3:{
-            type: Text,
+            type: String,
             required: true
         },
         amount3:{
-            type: Text,
+            type: String,
             required: true
         },
         wiki3:{
-            type: Text,
+            type: String,
             required:true
         },
         name4:{
-            type: Text,
+            type: String,
             required: true
         },
         img4:{
-            type: Text,
+            type: String,
             required: true
         },
         amount4:{
-            type: Text,
+            type: String,
             required: true
         },
         wiki4:{
-            type: Text,
+            type: String,
             required:true
         }
     },

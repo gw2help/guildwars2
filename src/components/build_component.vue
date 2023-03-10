@@ -70,27 +70,27 @@
     },
     props:{
         name:{
-            type: Text,
+            type: String,
             required: false
         },
         link:{
-            type: Text,
+            type: String,
             required: false
         },
         chatCode:{
-            type: Text,
+            type: String,
             required: false
         },
         type:{
-            type: Text,
+            type: String,
             required: false
         },
         support:{
-            type: Text,
+            type: String,
             required: false
         },
         profession: {
-            type: Text,
+            type: String,
             required: false
         }
     },

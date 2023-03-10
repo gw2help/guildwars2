@@ -23,18 +23,18 @@ export default {
     Nav
   },
   methods: {
-		apiMain(){ 
-			console.log("apiMain: APP.vue")
-			apikey = document.querySelector('token').value;
-			console.log(apikey);
-		}
+	apiMain(){ 
+		console.log("apiMain: APP.vue")
+		apikey = document.querySelector('token').value;
+		console.log(apikey);
+	}
   }
 }
 </script>
 
 <style>
-
   @import'~bootstrap/dist/css/bootstrap.css';
+
   body,html{
     min-height: 100vh;    
     background-color: rgb(22,22,22);
@@ -47,11 +47,12 @@ export default {
   }
 
   #outerdivFullPage{
-		height: 90vh;
+		height: 92vh;
 		position: relative;
 		overflow: hidden;
 		vertical-align: top;
 	}
+
 	/* scrollbar */
 		/* width */
 		::-webkit-scrollbar {
@@ -95,6 +96,10 @@ export default {
 
 	.grayedOut{
 		filter: grayscale(1);
+	}
+
+	.border-thick{
+		border-width: 2px;
 	}
 
   	.roundedz{
@@ -153,9 +158,32 @@ export default {
 		width: 90%;
 	}
 
+	.col-075{
+		flex: 0 0 auto;
+		width: 6.25%;
+	}
+
 	.col-15{
     	flex: 0 0 auto;
     	width: 12.5%;
+	}
+
+	.col-225{
+		flex: 0 0 auto;
+		width: 18.25%;
+	}
+
+	.col-30{
+		flex: 0 0 auto;
+		width: 25%;
+	}
+
+	.text-orange{
+		color: #ffa405;
+	}
+
+	.text-pink{
+		color: #fb3e8d;
 	}
 
 	.icon{
@@ -168,4 +196,17 @@ export default {
 	.grow:hover{
 		transform: scale(1.15);
 	}
+
+	.growBig:hover{
+		transform: scale(1.2);
+	}
+
+	.navBtn:hover, .btnGo:hover {
+		border-width: 2px !important;
+	}
+
+	.smallText{
+		font-size: 10px;
+	}
+	
 </style>
